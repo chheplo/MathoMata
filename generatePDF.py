@@ -7,7 +7,7 @@ from pylatex.utils import italic, escape_latex
 import content
 
 
-def generate_pdf(n_var_repetition, n_var_method_list, n_var_complex_list):
+def generate_pdf(filename, n_var_repetition, n_var_method_list, n_var_complex_list):
     doc = Document()
     doc.packages.append(Package('geometry', options=['tmargin=2cm',
                                                      'lmargin=2cm',
@@ -15,7 +15,7 @@ def generate_pdf(n_var_repetition, n_var_method_list, n_var_complex_list):
     doc.packages.append(Package('array'))
     doc.packages.append(Package('longtable'))
     generate_pages(doc, n_var_repetition, n_var_method_list, n_var_complex_list)
-    doc.generate_pdf()
+    doc.generate_pdf(filename=filename)
 
 
 def generate_pages(doc, n_var_repetition, n_var_method_list, n_var_complex_list):
